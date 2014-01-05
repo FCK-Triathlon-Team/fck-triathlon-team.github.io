@@ -10,10 +10,12 @@ title: 1.FC Kaiserslautern Triathlon Team
         <h1>News</h1>
         <ul>
           {% for post in site.posts %}
-            <li>
-              <a href="{{ post.url }}">{{post.date | date_to_string}} - {{ post.title }}</a>
-              <p>{{ post.excerpt }}</p>
-            </li>
+            {% if post.categories contains 'news' %}
+              <li>
+                <a href="{{ post.url }}">{{post.date | date_to_string}} - {{ post.title }}</a>
+                <p>{{ post.excerpt }}</p>
+              </li>
+            {% endif %}
           {% endfor %}
         </ul>
       </div>
@@ -22,10 +24,11 @@ title: 1.FC Kaiserslautern Triathlon Team
     <div class="col-md-6">
       <div class="well">
         <h1>Wettkämpfe</h1>
-          <table class="table">
-            <tr><td><strong>6. Juli</strong></td><td>Ironman Frankfurt</td></tr>
-            <tr><td><strong>22. Oktober</strong></td><td>Ironman Hawaii</td></tr>
-          </table>
+        {% for post in site.posts %}
+          {% if post.categories contains 'races' %}
+             <a href="{{ post.url }}">{{post.date | date_to_string}} - {{ post.title }}</a>
+          {% endif %}
+        {% endfor %}
       </div>
     </div>
   </div>  
