@@ -5,7 +5,6 @@ title: 1.FC Kaiserslautern Triathlon Team
 
 <div class="container"> 
   <div class="row">
-    <div class="col-md-6">
       <div class="well">
         <h1>News</h1>
         <ul>
@@ -19,17 +18,26 @@ title: 1.FC Kaiserslautern Triathlon Team
           {% endfor %}
         </ul>
       </div>
-    </div>
-    
-    <div class="col-md-6">
+  </div>
+  <div class="row">
       <div class="well">
         <h1>Wettkämpfe</h1>
-        {% for post in site.posts %}
-          {% if post.categories contains 'races' %}
-             <a href="{{ post.url }}">{{post.date | date_to_string}} - {{ post.title }}</a>
-          {% endif %}
-        {% endfor %}
+        <div id="raceTable"></div>
+        <script type="text/javascript">
+          $.get('https://docs.google.com/spreadsheet/pub?key=0AkzB8rY867_HdHhHSHZZVm1OLXkzdTFIQzVKS240RHc&' +
+                'single=true&gid=0&range=B1%3AF1000000&output=csv', function(data, status){
+                                                      var lines = data.split("\n"),
+                                                          output = [],
+                                                          i;
+                                                      for (i = 0; i < lines.length; i++) {
+                                                        output.push("<tr><td>"
+                                                            + lines[i].slice(0).split(",").join("</td><td>")
+                                                            + "</td></tr>");
+                                                      }
+                                                      output = "<table class='table'>" + output.join("") + "</table>";
+                                                      $('#raceTable').html(output);
+         });
+        </script>
       </div>
-    </div>
   </div>  
 </div>

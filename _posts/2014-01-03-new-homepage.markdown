@@ -1,7 +1,6 @@
 ---
 layout: news
 title:  "Neue Homepage"
-date:   2014-01-03 14:12:59
 categories: news
 tags: news homepage
 ---
