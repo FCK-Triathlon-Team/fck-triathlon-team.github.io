@@ -30,11 +30,17 @@ title: 1.FC Kaiserslautern Triathlon Team
                                                           output = [],
                                                           i;
                                                       for (i = 0; i < lines.length; i++) {
+                                                        if(i==0) {
+                                                          output.push("<tr><td><strong>"
+                                                               + lines[i].slice(0).split(",").join("</strong></td><td><strong>")
+                                                               + "</strong></td></tr>");
+                                                        } else {
                                                         output.push("<tr><td>"
                                                             + lines[i].slice(0).split(",").join("</td><td>")
                                                             + "</td></tr>");
+                                                        }
                                                       }
-                                                      output = "<table class='table'>" + output.join("") + "</table>";
+                                                      output = "<table class='table table-bordered'>" + output.join("") + "</table>";
                                                       $('#raceTable').html(output);
          });
         </script>
