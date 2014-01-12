@@ -1,0 +1,33 @@
+---
+layout: default
+title: 1.FC Kaiserslautern Triathlon Team
+---
+
+<div class="container"> 
+  <div class="row">
+    <h1>Termine</h1>
+        <div id="raceTable"></div>
+        <script type="text/javascript">
+          $.get('https://docs.google.com/spreadsheet/pub?key=0AkzB8rY867_HdHhHSHZZVm1OLXkzdTFIQzVKS240RHc&' +
+                'single=true&gid=0&range=B1%3AF1000000&output=csv', function(data, status){
+                                                      var lines = data.split("\n"),
+                                                          output = [],
+                                                          i;
+                                                      for (i = 0; i < lines.length; i++) {
+                                                        if(i==0) {
+                                                          output.push("<tr><td><strong>"
+                                                               + lines[i].slice(0).split(",").join("</strong></td><td><strong>")
+                                                               + "</strong></td></tr>");
+                                                        } else {
+                                                        output.push("<tr><td>"
+                                                            + lines[i].slice(0).split(",").join("</td><td>")
+                                                            + "</td></tr>");
+                                                        }
+                                                      }
+                                                      output = "<table class='table table-bordered'>" + output.join("") + "</table>";
+                                                      $('#raceTable').html(output);
+         });
+        </script>
+      </div>
+  </div>  
+</div>

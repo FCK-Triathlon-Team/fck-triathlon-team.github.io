@@ -1,85 +1,88 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>{{ page.title }}</title>
+<meta name="viewport" content="width=device-width">
 
-        <!-- Latest compiled and minified bootstrap CSS -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">  
-        
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
-        
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://code.jquery.com/jquery.js"></script>        
+<!-- Latest compiled and minified bootstrap CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/css/main.css">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->        
-    </head>
-    <body>
-      <div class="navbar-wrapper">
-        <div class="container">
-          <div class="row">
-            <div align="center">
-              <img src="/images/headerimg.jpg">
-            </div>
-          </div>
-        </div>
+        <![endif]-->
+</head>
+<body>
 
-        <div class="navbar navbar-default" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="/">{{ site.name }}</a>
-            </div>
-            <div class="navbar-collapse collapse">            
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Startseite</a></li>
-                <li><a href="#about">Bilder</a></li>
-                <li><a href="#contact">Mitglied werden</a></li>
-              </ul>
-            </div><!--/.navbar-collapse -->
-          </div>
-        </div>        
-      </div>
-        
-      {{content}}
-        
-      <div class="navbar navbar-default">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-        <footer>
-          <p>Mit freundlicher Unterstützung von:
-          <table align="center">
-            <tr>
-              <td><img src="/images/pizza-hut.png"></td>
-              <td><img src="/images/rhoen-park-hotel.png"></td>
-              <td><img src="/images/wheelsports.png"></td>
-              <td><img src="/images/www.medifit-kl.de.png"></td>
-              <td><img src="/images/aktiv3.png"></td>
-            </tr>
-          </table>
-          </p>
-          <p class="pull-right">&copy; 1.FC Kaiserslautern 2014</p>
-        </footer>
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+                class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">1. FCK Triathlon Team</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html">Startseite</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">News<b class="caret"></b>
+              </a>
+                <ul class="dropdown-menu">
+                  <li><a href="termine.html">Termine</a></li>
+                  <li><a href="ergebnisse.html">Ergebnisse</a></li>
+                </ul></li>
+              <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Liga
+                  Mannschaften <b class="caret"></b>
+              </a>
+                <ul class="dropdown-menu">
+                  <li><a href="herrenliga.html">Herrenliga</a></li>
+                  <li><a href="damenliga.html">Damenliga</a></li>
+                </ul></li>
+              <li><a href="training.html">Training</a></li>              
+              <li><a href="sponsoren.html">Sponsoren</a></li>
+              <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-        <!-- Bootstrap core JavaScript
+      <div><br><br></div>
+    
+  
+  {{content}}
+
+  <div class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <footer>
+        <table align="center">
+          <tr>
+            <td><img height="60px" src="/images/pizza-hut.png"></td>
+            <td><img height="50px" src="/images/rhoen-park-hotel.png"></td>
+            <td><img height="50px" src="/images/wheelsports.png"></td>
+            <td><img height="50px" src="/images/www.medifit-kl.de.png"></td>
+            <td><img height="50px" src="/images/aktiv3.png"></td>
+          </tr>
+        </table>
+      </footer>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript
              ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        
-        <!-- Latest compiled and minified bootstrap JavaScript -->
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  <!-- Placed at the end of the document so the pages load faster -->
 
-    </body>
+  <!-- Latest compiled and minified bootstrap JavaScript -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+</body>
 </html>

@@ -1,49 +1,39 @@
----
-layout: default
-title: 1.FC Kaiserslautern Triathlon Team
+--- 
+layout: default 
+title: 1.FC Kaiserslautern Triathlon Team 
 ---
 
-<div class="container"> 
-  <div class="row">
-      <div class="well">
-        <h1>News</h1>
-        <ul>
-          {% for post in site.posts %}
-            {% if post.categories contains 'news' %}
-              <li>
-                <a href="{{ post.url }}">{{post.date | date_to_string}} - {{ post.title }}</a>
-                <p>{{ post.excerpt }}</p>
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
+<!-- Carousel
+    ================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="images/headerimg.jpg">
+    </div>
+    <div class="item">
+      <img src="images/liga-damen.jpg">
+    </div>
+    <div class="item">
+      <img src="images/liga-herren.jpg">
+    </div>
+    <div class="item">
+      <img src="images/team.jpg">
+    </div>
   </div>
-  <div class="row">
-      <div class="well">
-        <h1>Wettkämpfe</h1>
-        <div id="raceTable"></div>
-        <script type="text/javascript">
-          $.get('https://docs.google.com/spreadsheet/pub?key=0AkzB8rY867_HdHhHSHZZVm1OLXkzdTFIQzVKS240RHc&' +
-                'single=true&gid=0&range=B1%3AF1000000&output=csv', function(data, status){
-                                                      var lines = data.split("\n"),
-                                                          output = [],
-                                                          i;
-                                                      for (i = 0; i < lines.length; i++) {
-                                                        if(i==0) {
-                                                          output.push("<tr><td><strong>"
-                                                               + lines[i].slice(0).split(",").join("</strong></td><td><strong>")
-                                                               + "</strong></td></tr>");
-                                                        } else {
-                                                        output.push("<tr><td>"
-                                                            + lines[i].slice(0).split(",").join("</td><td>")
-                                                            + "</td></tr>");
-                                                        }
-                                                      }
-                                                      output = "<table class='table table-bordered'>" + output.join("") + "</table>";
-                                                      $('#raceTable').html(output);
-         });
-        </script>
-      </div>
-  </div>  
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span
+    class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myCarousel"
+    data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
+<!-- /.carousel -->
+
+<div class="container marketing">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Hereinspaziert... <span class="text-muted">oder auch geschwommen, geradelt oder gelaufen ;-)</span></h2>
+          <p class="lead">Herzlich Willkommen beim 1. FC Kaiserslautern Triathlon Team. Erfahren Sie mehr über uns auf den folgenden Seiten und besuchen Sie auch auf Facebook und Google+. Viel Spaß beim Stöbern und vielleicht sehen wir uns schon bald im Training!</p>
+        </div>
+        <div class="col-md-5">
+          <img style="padding: 10px" class="img-rounded" src="images/Composing500x420.jpg"  width="100%">
+        </div>
+</div>
+
+
