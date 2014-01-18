@@ -1,1 +1,9 @@
 .carousel-inner > .item > img { margin: 0 auto; }
+
+.content {
+  background-image:url('../images/Teufel.png');
+  background-repeat:no-repeat;
+  background-position:left top;
+  background-attachment:fixed;
+  background-size: contain;
+} 
