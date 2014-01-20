@@ -2,11 +2,41 @@
 layout: default
 title: 1.FC Kaiserslautern Triathlon Team
 ---
+<!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<div class="carousel-inner">
+		<div class="item active">
+			<img src="images/termine1.jpg">
+		</div>
+		<div class="item">
+			<img src="images/termine2.jpg">
+		</div>
+		<div class="item">
+			<img src="images/termine3.jpg">
+		</div>
+		<div class="item">
+			<img src="images/termine4.jpg">
+		</div>
+	</div>
+	<a class="left carousel-control" href="#myCarousel" data-slide="prev"><span
+	class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#myCarousel"
+	data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+<!-- /.carousel -->
 
 <div class="container">
 	<div class="row">
-		<h1>Termine</h1>
-		<div id="raceTable"></div>
+		<h2 class="featurette-heading">Termine
+	<br>
+	<span class="text-muted">Was? Wo? Wann? Bei uns ist immer was los!</span>
+	<br>
+	</h2>
+	<p class="lead">
+		Bei den folgenden Veranstaltungen gehen Mitglieder des 1. FC Kaiserslautern Triathlon Teams an den Start. 
+		Außerdem bietet dieses Seite eine Auswahl an Triathlon- und Laufveranstaltungen, falls noch jemand eine Idee braucht, wo er oder sie starten könnte.
+			</p>
+			<div id="raceTable"></div>
 		<script type="text/javascript">
 			$.get('https://docs.google.com/spreadsheet/pub?key=0AkzB8rY867_HdHhHSHZZVm1OLXkzdTFIQzVKS240RHc&' + 'single=true&gid=0&range=B1%3AF1000000&output=csv', function(data, status) {
 				var lines = data.split("\n"), output = [], i;
