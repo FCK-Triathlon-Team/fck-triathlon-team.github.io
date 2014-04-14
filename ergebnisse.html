@@ -31,8 +31,26 @@ title: 1.FC Kaiserslautern Triathlon Team
 	<span class="text-muted">Wer war wann und wo wie schnell?</span>
 	<br>
 	</h2>
-	<p class="lead">
-		Wettkämpfe gehören einfach dazu – und jeder gibt sein Bestes. Aber auch der Teamgedanke darf nicht fehlen: Frei nach dem Motto "Ein Lautrer kommt selten allein" starten wir selten ohne unsere Teamkollegen.
-                <iframe width='800' height='300' frameborder='0' src='https://docs.google.com/spreadsheet/pub?key=0AkzB8rY867_HdFp5RVFZWlVXamo1NUFYS256MnFMc0E&output=html&widget=true'></iframe>
-			</div>
+	  <p class="lead">
+	  	Wettkämpfe gehören einfach dazu – und jeder gibt sein Bestes. Aber auch der 
+                Teamgedanke darf nicht fehlen: Frei nach dem Motto "Ein Lautrer kommt selten allein" 
+                starten wir selten ohne unsere Teamkollegen.
+          </p>
+          <div id="resultTable"></div>
+		<script type="text/javascript">
+			$.get('https://docs.google.com/spreadsheet/pub?key=0AkzB8rY867_HdGtPMzVnZDBFTkZBRngtSDZvVDRNcnc&single=true&gid=0&output=csv', function(data, status) {
+				var lines = data.split("\n"), output = [], i;
+				for ( i = 0; i < lines.length; i++) {
+					if (i == 0) {
+						output.push("<tr><td><strong>" + lines[i].slice(0).split(",").join("</strong></td><td><strong>") + "</strong></td></tr>");
+					} else {
+						output.push("<tr><td>" + lines[i].slice(0).split(",").join("</td><td>") + "</td></tr>");
+					}
+				}
+				output = "<table class='table table-bordered'>" + output.join("") + "</table>";
+				$('#resultTable').html(output);
+			});
+		</script>
+
+        </div>
 </div>
