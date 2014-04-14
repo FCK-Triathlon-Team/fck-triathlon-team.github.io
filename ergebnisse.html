@@ -47,7 +47,7 @@ title: 1.FC Kaiserslautern Triathlon Team
 						output.push("<tr><td>" + lines[i].slice(0).split(",").join("</td><td>") + "</td></tr>");
 					}
 				}
-				output = "<table class='table table-bordered'>" + output.join("") + "</table>";
+				output = "<table class='table table-bordered table-condensed'>" + output.join("") + "</table>";
 				$('#resultTable').html(output);
                                 // get url hash value as jump location
                                 var hashVal = window.location.hash.substr(1);
