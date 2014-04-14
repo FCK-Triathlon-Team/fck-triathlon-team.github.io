@@ -44,7 +44,13 @@ title: 1.FC Kaiserslautern Triathlon Team
 					if (i == 0) {
 						output.push("<tr><td><strong>" + lines[i].slice(0).split(",").join("</strong></td><td><strong>") + "</strong></td></tr>");
 					} else {
-						output.push("<tr><td>" + lines[i].slice(0).split(",").join("</td><td>") + "</td></tr>");
+                                          var splits = lines[i].slice(0).split(",");
+                                          if(splits[0].trim() === 'tri') {
+    					    output.push("<tr class='success'><td>" + splits.slice(1).join("</td><td>") + "</td></tr>");
+                                          }
+                                          else {
+    					    output.push("<tr><td>" + splits.slice(1).join("</td><td>") + "</td></tr>");
+                                          }
 					}
 				}
 				output = "<table class='table table-bordered'>" + output.join("") + "</table>";
