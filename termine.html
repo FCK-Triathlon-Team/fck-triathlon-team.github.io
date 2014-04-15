@@ -48,9 +48,9 @@ title: 1.FC Kaiserslautern Triathlon Team
                                             var splits = lines[i].slice(0).split(",");
                                             var cls = "";
                                             if(splits[0].trim() === 'tri') {
-                                              cls = "success";
+                                              cls = "active";
                                             }
-                                            else if(splits[0].trim() === 'team') {
+                                            else if(splits[0].trim() === 'run') {
                                               cls = "active";
                                             }
                                             output.push("<tr class='" + cls + "'><td>" + splits.slice(1).join("</td><td>") + "</td></tr>");
