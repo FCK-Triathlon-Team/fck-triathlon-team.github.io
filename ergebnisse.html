@@ -63,8 +63,8 @@ title: 1.FC Kaiserslautern Triathlon Team
 				$('#resultTable').html(output);
                                 // get url hash value as jump location
                                 var hashVal = window.location.hash.substr(1);
-                                //then jump to that hash
                                 location.hash = "#" + hashVal;
+                                window.scrollBy(0, -60);
 			});
                     
 		</script>
