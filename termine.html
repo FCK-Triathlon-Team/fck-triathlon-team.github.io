@@ -34,7 +34,8 @@ title: 1.FC Kaiserslautern Triathlon Team
 	</h2>
 	<p class="lead">
 		Bei den folgenden Veranstaltungen gehen Mitglieder des 1. FC Kaiserslautern Triathlon Teams an den Start. 
-		Außerdem bietet dieses Seite eine Auswahl an Triathlon- und Laufveranstaltungen, falls noch jemand eine Idee braucht, wo er oder sie starten könnte.
+		Außerdem bietet dieses Seite eine Auswahl an Triathlon- und Laufveranstaltungen, falls noch jemand eine Idee
+		braucht, wo er oder sie starten könnte.
 			</p>
 			<div id="raceTable"></div>
         		<script type="text/javascript">
@@ -43,17 +44,20 @@ title: 1.FC Kaiserslautern Triathlon Team
                                   var lines = data.split("\n"), output = [], i;
                                   for ( i = 0; i < lines.length; i++) {
                                           if (i == 0) {
-                                                  output.push("<tr><td><strong>" + lines[i].slice(1).split(",").join("</strong></td><td><strong>") + "</strong></td></tr>");
+                                                  output.push("<tr><td><strong>" +
+                                                  lines[i].slice(1).split(",").join("</strong></td><td><strong>") +
+                                                  "</strong></td></tr>");
                                           } else {
                                             var splits = lines[i].slice(0).split(",");
                                             var cls = "";
                                             if(splits[0].trim() === 'tri') {
-                                              cls = "active";
+                                              cls = "success";
                                             }
                                             else if(splits[0].trim() === 'run') {
                                               cls = "active";
                                             }
-                                            output.push("<tr class='" + cls + "'><td>" + splits.slice(1).join("</td><td>") + "</td></tr>");
+                                            output.push("<tr class='" + cls + "'><td>" + splits.slice(1).join("</td><td>") +
+                                                        "</td></tr>");
                                           }
                                   }
                                   output = "<table class='table table-bordered table-condensed'>" + output.join("") + "</table>";

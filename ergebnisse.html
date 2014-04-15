@@ -38,11 +38,14 @@ title: 1.FC Kaiserslautern Triathlon Team
           </p>
           <div id="resultTable"></div>
 		<script type="text/javascript">
-			$.get('https://docs.google.com/spreadsheet/pub?key=0AkzB8rY867_HdGtPMzVnZDBFTkZBRngtSDZvVDRNcnc&single=true&gid=0&output=csv', function(data, status) {
+			$.get('https://docs.google.com/spreadsheet/pub?key=0AkzB8rY867_HdGtPMzVnZDBFTkZBRngtSDZvVDRNcnc&'+
+			      'single=true&gid=0&output=csv', function(data, status) {
 				var lines = data.split("\n"), output = [], i;
 				for ( i = 0; i < lines.length; i++) {
 					if (i == 0) {
-						output.push("<tr><td><strong>" + lines[i].slice(1).split(",").join("</strong></td><td><strong>") + "</strong></td></tr>");
+						output.push("<tr><td><strong>" +
+						lines[i].slice(1).split(",").join("</strong></td><td><strong>") +
+						"</strong></td></tr>");
 					} else {
                                             var splits = lines[i].slice(0).split(",");
                                             var cls = "";
@@ -52,7 +55,8 @@ title: 1.FC Kaiserslautern Triathlon Team
                                             else if(splits[0].trim() === 'run') {
                                               cls = "active";
                                             }
-                                            output.push("<tr class='" + cls + "'><td>" + splits.slice(1).join("</td><td>") + "</td></tr>");
+                                            output.push("<tr class='" + cls + "'><td>" + splits.slice(1).join("</td><td>") +
+                                                        "</td></tr>");
 					}
 				}
 				output = "<table class='table table-bordered table-condensed'>" + output.join("") + "</table>";
