@@ -32,5 +32,5 @@ body {
 }
 
 table > tbody > .active > td {
-  background-color: rgb(220, 220, 220) !important;
+  background-color: rgb(250, 240, 180) !important;
 }
