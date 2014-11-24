@@ -71,20 +71,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li {% if page.url == "/herrenliga.html" or page.url == "/damenliga.html"%}
-                        class="active dropdown"
-                        {% else %}
-                        class="dropdown"
-                        {% endif %}>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Liga
-                            Mannschaften <b class="caret"></b> </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="herrenliga.html">Herrenliga</a>
-                                </li>
-                                                        </ul>
-                        </li>
-                        <li {% if page.url == "/training.html" %}class="active"{% endif %}>
+                                                <li {% if page.url == "/training.html" %}class="active"{% endif %}>
                             <a href="training.html">Training</a>
                         </li>
                         <li {% if page.url == "/sponsoren.html" %}class="active"{% endif %}>
