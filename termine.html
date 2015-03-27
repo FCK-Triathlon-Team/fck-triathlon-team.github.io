@@ -40,7 +40,7 @@ title: 1.FC Kaiserslautern Triathlon Team
 			<div id="raceTable"></div>
         		<script type="text/javascript">
                           $.get('https://docs.google.com/spreadsheets/d/0AkzB8rY867_HdHhHSHZZVm1OLXkzdTFIQzVKS240RHc/' + 
-                                'export?gid=0&format=csv', function(data, status) {
+                                'export?format=csv', function(data, status) {
                                   var lines = data.split("\n"), output = [], i;
                                   for ( i = 0; i < lines.length; i++) {
                                           if (i == 0) {
