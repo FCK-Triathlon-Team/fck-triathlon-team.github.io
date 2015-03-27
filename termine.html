@@ -39,7 +39,7 @@ title: 1.FC Kaiserslautern Triathlon Team
 			</p>
 			<div id="raceTable"></div>
         		<script type="text/javascript">
-                          $.get('https://docs.google.com/spreadsheet/pub?key=0AkzB8rY867_HdHhHSHZZVm1OLXkzdTFIQzVKS240RHc&' + 
+                          $.get('http://whateverorigin.org/get?url=' + encodeURIComponent('https://docs.google.com') + '/spreadsheet/pub?key=0AkzB8rY867_HdHhHSHZZVm1OLXkzdTFIQzVKS240RHc&' + 
                                 'single=true&gid=0&output=csv', function(data, status) {
                                   var lines = data.split("\n"), output = [], i;
                                   for ( i = 0; i < lines.length; i++) {
@@ -62,7 +62,7 @@ title: 1.FC Kaiserslautern Triathlon Team
                                   }
                                   output = "<table class='table table-bordered table-condensed'>" + output.join("") + "</table>";
                                   $('#raceTable').html(output);
-                          }, {'crossDomain': false});
+                          });
 	        	</script>
 	</div>
 </div>
