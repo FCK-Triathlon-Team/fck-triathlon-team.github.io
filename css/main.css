@@ -31,6 +31,10 @@ body {
   border-right: 1px solid #ffffff;
 }
 
-table > tbody > .active > td {
+table .team {
+ background-color: #DFF0D8 !important;
+}
+
+table .tri {
   background-color: rgb(250, 240, 180) !important;
 }
