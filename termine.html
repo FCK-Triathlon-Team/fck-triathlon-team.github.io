@@ -36,31 +36,31 @@ title: 1.FC Kaiserslautern Triathlon Team
 		Bei den folgenden Veranstaltungen gehen Mitglieder des 1. FC Kaiserslautern Triathlon Teams an den Start. 
 		Außerdem bietet diese Seite eine Auswahl an Triathlon- und Laufveranstaltungen, falls noch jemand eine Idee
 		braucht, wo er oder sie starten könnte. Selbstverständlich verlinken wir hier auch zu den Veranstaltern und zu unseren Ergebnissen, Bildern etc.
-			</p>
-			<div id="raceTable"></div>
+	</p>
+	<div id="raceTable"></div>
                         
-                        <script id="raceTable_template" type="text/html">
-                        <table class='table table-bordered table-condensed'>
-                          <tr><th>Datum</th><th>Name der Veranstaltung und Veranstalterlink</th><th>Distanzen</th><th>Info</th></tr>
-                          {% raw %}{{#rows}}{% endraw %}
-                            <tr class="{% raw %}{{typ}}{% endraw %}">
-                              <td>{% raw %}{{{datum}}}{% endraw %}</td>
-                              <td>{% raw %}{{{name}}}{% endraw %}</td>
-                              <td>{% raw %}{{{distanzen}}}{% endraw %}</td>
-                              <td>{% raw %}{{{zusatzinfos}}}{% endraw %}</td>
-                            </tr>
-                          {% raw %}{{/rows}}{% endraw %}
-                        </table>
-                        </script>
-                        <script type="text/javascript">
-                          document.addEventListener('DOMContentLoaded', function() {
-                          var URL = "1R7j_OLsNqpwQaP9MsW6sTs7SuW_VH09YCFVHxIGtqZ0"
-                          Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
-                          })
-                          function showInfo(data) {
-                            var tableOptions = {"data": data, "tableDiv": "#raceTable", 'pagination':10};
-                            Sheetsee.makeTable(tableOptions);
-                          }
-                        </script>  
-	</div>
+        <script id="raceTable_template" type="text/html">
+          <table class='table table-bordered table-condensed'>
+            <tr><th>Datum</th><th>Name der Veranstaltung und Veranstalterlink</th><th>Distanzen</th><th>Info</th></tr>
+            {% raw %}{{#rows}}{% endraw %}
+              <tr class="{% raw %}{{typ}}{% endraw %}">
+                <td>{% raw %}{{{datum}}}{% endraw %}</td>
+                <td>{% raw %}{{{name}}}{% endraw %}</td>
+                <td>{% raw %}{{{distanzen}}}{% endraw %}</td>
+                <td>{% raw %}{{{zusatzinfos}}}{% endraw %}</td>
+              </tr>
+            {% raw %}{{/rows}}{% endraw %}
+          </table>
+        </script>
+        <script type="text/javascript">
+          document.addEventListener('DOMContentLoaded', function() {
+          var URL = "1R7j_OLsNqpwQaP9MsW6sTs7SuW_VH09YCFVHxIGtqZ0"
+          Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
+          })
+          function showInfo(data) {
+            var html = Sheetsee.ich.raceTable_template({'rows': data})
+            $('#raceTable').html(html);
+          }
+        </script>  
+      </div>
 </div>
