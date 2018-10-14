@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
 
-        <link rel="shortcut icon" type="image/x-icon" href="images/Favicon.png">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width">
 
-        <!-- Latest compiled and minified bootstrap CSS -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/Favicon.png">
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+    <!-- Latest compiled and minified bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://code.jquery.com/jquery.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.3.4/tabletop.min.js"></script>
-        <script src='/js/sheetsee.js'></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.3.4/tabletop.min.js"></script>
+    <script src='/js/sheetsee.js'></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-        
-        <!-- Google analytics tracking code -->
-        <!--<script>
+
+    <!-- Google analytics tracking code -->
+    <!--<script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -36,91 +38,102 @@
             ga('send', 'pageview');
         </script>
         -->
-    </head>
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                        <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html">1. FCK Triathlon Team</a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li {% if page.url == "/index.html" %}class="active"{% endif %}>
-                            <a href="index.html">Startseite</a>
-                        </li>
+</head>
 
-                        <li {% if page.url == "/team.html" %}class="active"{% endif %}>
-                            <a href="team.html">Team</a>
-                        </li>
-						<li {% if page.url == "/deiwelstour.html" %}class="active"{% endif %}>
-                            <a href="deiwelstour.html">Deiwels-Tour</a>
-                        </li>
-
-                        <li {% if page.url == "/termine.html" or page.url == "/ergebnisse.html"%}
-                        class="active dropdown"
-                        {% else %}
-                        class="dropdown"
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">1. FCK Triathlon Team</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li {% if page.url=="/index.html" %}class="active" {% endif %}>
+                        <a href="index.html">Startseite</a>
+                    </li>
+                    <li {% if page.url=="/team.html" %}class="active" {% endif %}>
+                        <a href="team.html">Team</a>
+                    </li>
+                    <li {% if page.url=="/training.html" %}class="active" {% endif %}>
+                        <a href="training.html">Training</a>
+                    </li>
+                    <li {% if page.url=="/deiwelstour.html" %}class="active" {% endif %}>
+                        <a href="deiwelstour.html">Deiwels-Tour</a>
+                    </li>
+                    <li {% if page.url=="/jugend_vorstellung.html" or 
+                              page.url=="/jugend_veranstaltungen.html" or
+                              page.url=="jugend_trainingszeiten.html" %}class="active" 
                         {% endif %}>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">News<b
-                            class="caret"></b> </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="termine.html">Termine</a>
-                                </li>
-                                <li>
-                                    <a href="ergebnisse.html">Ergebnisse</a>
-                                </li>
-                            </ul>
-                        </li>
-                                                <li {% if page.url == "/training.html" %}class="active"{% endif %}>
-                            <a href="training.html">Training</a>
-                        </li>
-                        <li {% if page.url == "/sponsoren.html" %}class="active"{% endif %}>
-                            <a href="sponsoren.html">Sponsoren</a>
-                        </li>
-                        <li {% if page.url == "/kontakt.html" %}class="active"{% endif %}>
-                            <a href="kontakt.html">Kontakt</a>
-                        </li>
-						
-                    </ul>
-                </div>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jugend<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="jugend_vorstellung.html">Vorstellung</a>
+                            </li>
+                            <li>
+                                <a href="jugend_veranstaltungen.html">Veranstaltungen</a>
+                            </li>
+                            <li>
+                                <a href="jugend_trainingszeiten.html">Trainingszeiten</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li {% if page.url=="/termine.html" or page.url=="/ergebnisse.html" %} class="active dropdown" {%
+                        else %} class="dropdown" {% endif %}>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">News<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="termine.html">Termine</a>
+                            </li>
+                            <li>
+                                <a href="ergebnisse.html">Ergebnisse</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li {% if page.url=="/sponsoren.html" %}class="active" {% endif %}>
+                        <a href="sponsoren.html">Sponsoren</a>
+                    </li>
+                    <li {% if page.url=="/kontakt.html" %}class="active" {% endif %}>
+                        <a href="kontakt.html">Kontakt</a>
+                    </li>
+
+                </ul>
             </div>
         </div>
+    </div>
 
-        <div>
-            {{content}}
-        </div>
+    <div>
+        {{content}}
+    </div>
 
-        <div class="navbar navbar-default navbar-fixed-bottom">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sponsorsBar">
-                        <span class="sr-only">Toggle navigation</span>Unsere Hauptsponsoren: 
-                    </button>
-                </div>
-                <div id="sponsorsBar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">                        
-                        <li><a href="sponsoren.html">Unsere Hauptsponsoren:</a></li>
-                        <li class="divider-vertical"></li>
-                        <li><img height="60px" src="/images/pizza-hut.png"></li>
-                        <li class="divider-vertical"></li>
-                        <li><img height="50px" src="/images/gruendels-alkoholfrei.png"></li>
-                        <li class="divider-vertical"></li>
-                        <li><a href="sponsoren.html">Weitere Sponsoren und Ausstatter</a></li>
-                    </ul>
-                </div>
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sponsorsBar">
+                    <span class="sr-only">Toggle navigation</span>Unsere Hauptsponsoren:
+                </button>
+            </div>
+            <div id="sponsorsBar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="sponsoren.html">Unsere Hauptsponsoren:</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><img height="60px" src="/images/pizza-hut.png"></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="sponsoren.html">Weitere Sponsoren und Ausstatter</a></li>
+                </ul>
             </div>
         </div>
-        <!-- Bootstrap core JavaScript
+    </div>
+    <!-- Bootstrap core JavaScript
         ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Placed at the end of the document so the pages load faster -->
 
-        <!-- Latest compiled and minified bootstrap JavaScript -->
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
 
-    </body>
 </html>

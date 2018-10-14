@@ -5,39 +5,38 @@ title: 1.FC Kaiserslautern Triathlon Team
 <!-- Carousel
 ================================================== -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-	<div class="carousel-inner">
-		<div class="item active">
-			<img src="images/ergebnisse1.jpg">
-		</div>
-		<div class="item">
-			<img src="images/ergebnisse2.jpg">
-		</div>
-		<div class="item">
-			<img src="images/ergebnisse3.jpg">
-		</div>
-		<div class="item">
-			<img src="images/ergebnisse4.jpg">
-		</div>
-	</div>
-	<a class="left carousel-control" href="#myCarousel" data-slide="prev"><span
-	class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control" href="#myCarousel"
-	data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="images/ergebnisse1.jpg">
+    </div>
+    <div class="item">
+      <img src="images/ergebnisse2.jpg">
+    </div>
+    <div class="item">
+      <img src="images/ergebnisse3.jpg">
+    </div>
+    <div class="item">
+      <img src="images/ergebnisse4.jpg">
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a><a
+    class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div>
 <!-- /.carousel -->
 <div class="container">
-	<div class="row">
-		<h2 class="featurette-heading">Ergebnisse
-	<br>
-	<span class="text-muted">Wer war wann und wo wie schnell?</span>
-	<br>
-	</h2>
-	  <p class="lead">
-	  	Wettkämpfe gehören einfach dazu – und jeder gibt sein Bestes. Aber auch der 
-                Teamgedanke darf nicht fehlen: Frei nach dem Motto "Ein Lautrer kommt selten allein" 
-                starten wir fast nie ohne unsere Teamkollegen.
-          </p>
-          <div id="resultTable"></div>
-              <script id="resultTable_template" type="text/html">
+  <div class="row">
+    <div class="page-header">
+      <h2>Ergebnisse<br>
+        <small>Wer war wann und wo wie schnell?</small>
+      </h2>
+    </div>
+    <p class="lead">
+      Wettkämpfe gehören einfach dazu – und jeder gibt sein Bestes. Aber auch der
+      Teamgedanke darf nicht fehlen: Frei nach dem Motto "Ein Lautrer kommt selten allein"
+      starten wir fast nie ohne unsere Teamkollegen.
+    </p>
+    <div id="resultTable"></div>
+    <script id="resultTable_template" type="text/html">
                 <table class='table table-bordered table-condensed'>
                   <tr><th>Datum</th><th>Name der Veranstaltung</th><th>Platz</th><th>Gesamtzeit</th><th>AK</th><th>Platz AK</th><th>Swim</th><th>Bike</th><th>Run</th></tr>
                   {% raw %}{{#rows}}{% endraw %}
@@ -56,16 +55,16 @@ title: 1.FC Kaiserslautern Triathlon Team
                   {% raw %}{{/rows}}{% endraw %}
                 </table>
               </script>
-          
-              <script type="text/javascript">
-                  document.addEventListener('DOMContentLoaded', function() {
-                  var URL = "10BJRPgIfw85KkOHYshR_V-zte8-n-i1KEILnjVtxTxg"
-                  Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
-                  })
-                  function showInfo(data) {
-                    var html = Sheetsee.ich.resultTable_template({'rows': data})
-                    $('#resultTable').html(html);
-                  }
-              </script>
-        </div>
+
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+        var URL = "10BJRPgIfw85KkOHYshR_V-zte8-n-i1KEILnjVtxTxg"
+        Tabletop.init({ key: URL, callback: showInfo, simpleSheet: true })
+      })
+      function showInfo(data) {
+        var html = Sheetsee.ich.resultTable_template({ 'rows': data })
+        $('#resultTable').html(html);
+      }
+    </script>
+  </div>
 </div>
