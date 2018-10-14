@@ -59,15 +59,21 @@
                         <a href="team.html">Team</a>
                     </li>
                     <li {% if page.url=="/training.html" %}class="active" {% endif %}>
-                        <a href="training.html">Training</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Training<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="training.html">Erwachsene</a>
+                            </li>
+                            <li>
+                                <a href="jugend_trainingszeiten.html">Jugend</a>
+                            </li>
+                        </ul>
                     </li>
                     <li {% if page.url=="/deiwelstour.html" %}class="active" {% endif %}>
                         <a href="deiwelstour.html">Deiwels-Tour</a>
                     </li>
-                    <li {% if page.url=="/jugend_vorstellung.html" or 
-                              page.url=="/jugend_veranstaltungen.html" or
-                              page.url=="jugend_trainingszeiten.html" %}class="active" 
-                        {% endif %}>
+                    <li {% if page.url=="/jugend_vorstellung.html" or page.url=="/jugend_veranstaltungen.html" or
+                        page.url=="jugend_trainingszeiten.html" %}class="active" {% endif %}>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jugend<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
