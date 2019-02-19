@@ -24,8 +24,8 @@ body {
       }
 }
 
-img.sponsor-image {
-  height: 100px;
+.sponsor-image {
+  width: 200px;
 }
 
 .navbar .divider-vertical {
