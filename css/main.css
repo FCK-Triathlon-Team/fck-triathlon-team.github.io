@@ -24,6 +24,10 @@ body {
       }
 }
 
+img.sponsor-image {
+  height: 100px;
+}
+
 .navbar .divider-vertical {
   height: 60px;
   margin: 0 9px;
