@@ -84,7 +84,8 @@ title: 1.FC Kaiserslautern Triathlon Team
       })
       
       function showInfo(data) {
-        var html = Sheetsee.ich.resultTable_template({ 'rows': data })
+        console.log(data);
+        var html = Sheetsee.ich.resultTable_template({ 'rows': data });
         $('#resultTable').html(html);
       }
     </script>
