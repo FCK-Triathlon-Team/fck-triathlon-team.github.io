@@ -54,16 +54,16 @@ title: 1.FC Kaiserslautern Triathlon Team
                   <tr><th>Datum</th><th>Name der Veranstaltung</th><th>Platz</th><th>Gesamtzeit</th><th>AK</th><th>Platz AK</th><th>Swim</th><th>Bike</th><th>Run</th></tr>
                   {% raw %}{{#rows}}{% endraw %}
 
-                    <tr class="{% raw %}{{typ}}{% endraw %}">
-                      <td>{% raw %}{{{datum}}}{% endraw %}</td>
-                      <td>{% raw %}{{{name}}}{% endraw %}</td>
-                      <td>{% raw %}{{{platz}}}{% endraw %}</td>
-                      <td>{% raw %}{{{gesamtzeit}}}{% endraw %}</td>
-                      <td>{% raw %}{{{ak}}}{% endraw %}</td>
-                      <td>{% raw %}{{{platzak}}}{% endraw %}</td>
-                      <td>{% raw %}{{{swim}}}{% endraw %}</td>
-                      <td>{% raw %}{{{bike}}}{% endraw %}</td>
-                      <td>{% raw %}{{{run}}}{% endraw %}</td>
+                    <tr class="{% raw %}{{Typ}}{% endraw %}">
+                      <td>{% raw %}{{{Datum}}}{% endraw %}</td>
+                      <td>{% raw %}{{{Name}}}{% endraw %}</td>
+                      <td>{% raw %}{{{Platz}}}{% endraw %}</td>
+                      <td>{% raw %}{{{Gesamtzeit}}}{% endraw %}</td>
+                      <td>{% raw %}{{{AK}}}{% endraw %}</td>
+                      <td>{% raw %}{{{Platz AK}}}{% endraw %}</td>
+                      <td>{% raw %}{{{Swim}}}{% endraw %}</td>
+                      <td>{% raw %}{{{Bike}}}{% endraw %}</td>
+                      <td>{% raw %}{{{Run}}}{% endraw %}</td>
                     </tr>
                   {% raw %}{{/rows}}{% endraw %}
                 </table>
@@ -71,24 +71,22 @@ title: 1.FC Kaiserslautern Triathlon Team
     
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
     <script type="text/javascript">
-      document.addEventListener('DOMContentLoaded', function () {
         var URL = 'https://docs.google.com/spreadsheets/d/10BJRPgIfw85KkOHYshR_V-zte8-n-i1KEILnjVtxTxg/pub?output=csv';
 
-        function init() {
-          Papa.parse(URL, {
-            download: true,
-            header: true,
-            complete: showInfo
-          })
-        }
-      })
+			function init() {
+				Papa.parse(URL, {
+					download: true,
+					header: true,
+					complete: showInfo
+				})
+			}
       
       function showInfo(results) {
-        var data = results.data;
-        console.log("DATA:" + data);
-        var html = Sheetsee.ich.resultTable_template({ 'rows': data });
+        var html = Sheetsee.ich.resultTable_template({ 'rows': results.data });
         $('#resultTable').html(html);
       }
+
+      document.addEventListener('DOMContentLoaded', init);
     </script>
   </div>
 </div>
